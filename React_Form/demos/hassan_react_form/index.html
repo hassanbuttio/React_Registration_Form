@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registration Form</title>
+    <link href="style.css" type="text/css" />
+    <script src="../../js/react.min.js"></script>
+    <script src="../../js/react-dom.min.js"></script>
+    <script src="../../js/browser.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <style>
+
+    .main_container{
+    padding:20px;
+}
+.main_container h2{
+    width:100%;
+    text-align: center;
+}
+.main_container input{
+
+    width:100%;
+    padding:10px;
+    margin-top:2%;
+    border:1.5px solid pink;
+}
+.main_container img{
+    width:10%;
+    margin-left:43%;
+}
+@media screen and (min-device-width: 480px){
+    .main_container img{
+        width:10%;
+    }
+    .main_container{
+
+    }
+}
+}
+@media screen and (max-device-width: 480px){
+    .main_container img{
+        width:10%;
+    }
+    .main_container{
+        box-shadow: 5px 5px solid pink;
+    }
+    .main_container h2{
+    width:100%;
+    text-align: center;
+}
+}
+@media screen and (max-device-width: 960px){
+    .main_container img{
+        width:10%;
+    }
+    .main_container{
+        box-shadow: 5px 5px solid pink;
+    }
+    .main_container h2{
+    width:100%;
+    text-align: center;
+}
+}
+.main_container span{
+    font-size: 9px;
+}
+.main_container input[type=submit]{
+    background-color: dodgerblue;
+    color:white;
+    font-size: 16px;
+    font-family: Arial;
+    border:2px solid dodgerblue;
+}
+.main_container input[type=submit]:hover{
+background-color: pink;
+border:2px solid pink;
+color:dodgerblue;
+}
+     </style>
+</head>
+<body>
+<div id="register_container">
+</div><script type="text/babel">
+var Imag=React.createClass({
+    render: function(){return (
+<img src="logo_pic.jpg" />
+);}});
+
+var Heaading=React.createClass({
+    render: function(){
+        return (<h2>{this.props.title}</h2>);
+    }
+});
+var Row=React.createClass({
+    render: function(){return (
+<div class="row"></div>
+);}});
+var Fname=React.createClass({
+    render: function(){return (
+<input type="text" class="form-control" placeholder={this.props.title} />
+);}});
+var Lname=React.createClass({
+    render: function(){return (
+<input type="text" class="form-control" placeholder={this.props.title} />
+);}});
+var Email=React.createClass({
+render: function(){
+    return (<input type="email" class="form-control" placeholder={this.props.title} />
+);}
+});
+var Mobile=React.createClass({
+    render: function(){
+        return (<input type="number" class="form-control" placeholder={this.props.title} />);
+    }
+});
+var Mobile=React.createClass({
+    render: function(){
+        return (<input type="number" class="form-control" placeholder={this.props.title} />);
+    }
+});
+
+var DOB=React.createClass({
+    render:  function(){
+    return (<div>
+     <input type="Date" />
+     <span>{this.props.title}</span>
+    </div>);
+    }
+});
+var Button_Click=React.createClass({
+    clickable: function(){
+    alert('Register Successfully')
+    },
+    render:function(){
+        return (
+         <input type="submit" onClick={this.clickable} class="btn btn-primary" value={this.props.title}/>
+            )
+    }
+});
+var Subscribe=React.createClass({
+    getInititalState: function(){
+        return {checked: true}
+    },
+
+    render:function(){
+/*        var msg;
+        if(this.state.checked){
+            msg='checked'
+
+        }
+        else{
+            msg='unchecked'
+        }*/
+        return (<div><input type="checkbox" class="form-control" /></div>);
+    }
+});
+
+
+ReactDOM.render(<div className="main_container"><Imag /><Heaading title="Registration Form Using React JS" /><Fname title=" First Name: Hassan" /><Lname title=" Last Name : Latif Butt" /><Email title=" Email: hassanbutt@acm.org" />
+    <Mobile title=" Mobile: 0321-2508-437" /><DOB title=" Date Of Birth (01-01-1996)" /><Button_Click title=" Register"/></div>, document.getElementById("register_container"));
+</script>
+
+
+
+</body>
+</html>
